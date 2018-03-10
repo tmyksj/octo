@@ -5,13 +5,41 @@
     <meta charset="utf-8">
     <link href="octo.css" rel="stylesheet">
     <script src="octo.js"></script>
+    <style>
+        [class^="alert"] + [class^="alert"] {
+            margin-top: 0.8rem;
+        }
+    </style>
 </head>
 <body>
 <header>
+    <h1>Octo</h1>
 </header>
 <main>
+    <section id="alert">
+        <h1>Alert</h1>
+        <div class="alert">
+            This is default alert.
+        </div>
+        <div class="alert--error">
+            This is error alert.
+        </div>
+        <div class="alert--info">
+            This is info alert.
+        </div>
+        <div class="alert--negative">
+            This is negative alert.
+        </div>
+        <div class="alert--positive">
+            This is positive alert.
+        </div>
+        <div class="alert--warn">
+            This is warn alert.
+        </div>
+    </section>
 </main>
 <footer>
+    <span>Octo.</span>
 </footer>
 </body>
 </html>

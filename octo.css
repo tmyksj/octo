@@ -24,3 +24,51 @@
     --warn-3: #ff9800;
     --warn-4: #e65100;
 }
+
+.alert {
+    background: var(--default-1);
+    border: 0.05rem solid var(--default-4);
+    border-radius: 0.2rem;
+    color: var(--default-4);
+    padding: 0.4rem 0.8rem;
+}
+
+.alert--error {
+    background: var(--error-1);
+    border: 0.05rem solid var(--error-4);
+    border-radius: 0.2rem;
+    color: var(--error-4);
+    padding: 0.4rem 0.8rem;
+}
+
+.alert--info {
+    background: var(--info-1);
+    border: 0.05rem solid var(--info-4);
+    border-radius: 0.2rem;
+    color: var(--info-4);
+    padding: 0.4rem 0.8rem;
+}
+
+.alert--negative {
+    background: var(--negative-1);
+    border: 0.05rem solid var(--negative-4);
+    border-radius: 0.2rem;
+    color: var(--negative-4);
+    padding: 0.4rem 0.8rem;
+}
+
+.alert--positive {
+    background: var(--positive-1);
+    border: 0.05rem solid var(--positive-4);
+    border-radius: 0.2rem;
+    color: var(--positive-4);
+    padding: 0.4rem 0.8rem;
+}
+
+.alert--warn {
+    background: var(--warn-1);
+    border: 0.05rem solid var(--warn-4);
+    border-radius: 0.2rem;
+    color: var(--warn-4);
+    padding: 0.4rem 0.8rem;
+}
