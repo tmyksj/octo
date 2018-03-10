@@ -130,3 +130,145 @@ body {
     display: inline-block;
     padding: 0.1rem 0.4rem;
 }
+
+.button {
+    background: var(--default-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--default-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button:focus {
+    box-shadow: 0 0 0 0.2rem var(--default-1);
+    outline: 0;
+}
+
+.button:hover {
+    background: var(--default-2);
+}
+
+.button--error {
+    background: var(--error-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--error-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button--error:focus {
+    box-shadow: 0 0 0 0.2rem var(--error-1);
+    outline: 0;
+}
+
+.button--error:hover {
+    background: var(--error-2);
+}
+
+.button--info {
+    background: var(--info-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--info-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button--info:focus {
+    box-shadow: 0 0 0 0.2rem var(--info-1);
+    outline: 0;
+}
+
+.button--info:hover {
+    background: var(--info-2);
+}
+
+.button--negative {
+    background: var(--negative-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--negative-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button--negative:focus {
+    box-shadow: 0 0 0 0.2rem var(--negative-1);
+    outline: 0;
+}
+
+.button--negative:hover {
+    background: var(--negative-2);
+}
+
+.button--positive {
+    background: var(--positive-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--positive-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button--positive:focus {
+    box-shadow: 0 0 0 0.2rem var(--positive-1);
+    outline: 0;
+}
+
+.button--positive:hover {
+    background: var(--positive-2);
+}
+
+.button--warn {
+    background: var(--warn-3);
+    border: 0;
+    border-radius: 0.2rem;
+    color: var(--warn-1);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 1.6rem;
+    text-decoration: none;
+    transition: all 0.1s;
+}
+
+.button--warn:focus {
+    box-shadow: 0 0 0 0.2rem var(--warn-1);
+    outline: 0;
+}
+
+.button--warn:hover {
+    background: var(--warn-2);
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
