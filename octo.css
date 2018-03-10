@@ -25,6 +25,10 @@
     --warn-4: #e65100;
 }
 
+body {
+    font-family: arial, sans-serif;
+}
+
 .alert {
     background: var(--default-1);
     border: 0.05rem solid var(--default-4);
