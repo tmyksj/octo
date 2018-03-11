@@ -599,6 +599,18 @@ header {
     opacity: 0;
 }
 
+.ui--left {
+    text-align: left;
+}
+
+.ui--center {
+    text-align: center;
+}
+
+.ui--right {
+    text-align: right;
+}
+
 ::-moz-focus-inner {
     border: 0;
 }
