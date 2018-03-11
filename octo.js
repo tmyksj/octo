@@ -1,28 +1,36 @@
 (function () {
     "use strict";
 
-    let initializers = [];
-    let utilities = {
-        classList: {
-            contains: function (element, className) {
-                let postfixes = ["", "--error", "--info", "--negative", "--positive", "--warn"];
-                for (let postfix of postfixes) {
-                    if (element.classList.contains(className + postfix)) {
-                        return true;
-                    }
+    class Octo {
+        constructor() {
+            this.initializers = [];
+
+            window.addEventListener("DOMContentLoaded", function (event) {
+                for (let initializer of this.initializers) {
+                    initializer();
                 }
+            });
+        }
+
+        static is(className, element) {
+            if (element === undefined || element === null) {
                 return false;
             }
-        }
-    };
 
-    window.addEventListener("DOMContentLoaded", function (event) {
-        for (let initializer of initializers) {
-            initializer();
-        }
-    });
+            let postfixes = ["", "--error", "--info", "--negative", "--positive", "--warn"];
+            for (let postfix of postfixes) {
+                if (element.classList.contains(className + postfix)) {
+                    return true;
+                }
+            }
 
-    initializers.push(function () {
+            return false;
+        }
+    }
+
+    let octo = new Octo();
+
+    octo.initializers.push(function () {
         let targets = document.querySelectorAll("input, select, textarea");
         for (let target of targets) {
             update(target);
@@ -39,9 +47,7 @@
         function update(target) {
             let field = target.parentElement;
 
-            if (field === undefined
-                || field === null
-                || !utilities.classList.contains(field, "field")) {
+            if (!Octo.is("field", field)) {
                 return;
             }
 
