@@ -23,13 +23,25 @@
     });
 
     initializers.push(function () {
+        let targets = document.querySelectorAll("input, select, textarea");
+        for (let target of targets) {
+            update(target);
+        }
+
+        document.addEventListener("change", function (event) {
+            update(event.target);
+        });
+
         document.addEventListener("input", function (event) {
-            let target = event.target;
+            update(event.target);
+        });
+
+        function update(target) {
             let field = target.parentElement;
 
             if (field === undefined
-                    || field === null
-                    || !utilities.classList.contains(field, "field")) {
+                || field === null
+                || !utilities.classList.contains(field, "field")) {
                 return;
             }
 
@@ -38,6 +50,6 @@
             } else {
                 field.dataset.dirty = "";
             }
-        });
+        }
     });
 })();
