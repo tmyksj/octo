@@ -289,7 +289,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field input {
+.field input,
+.field select,
+.field textarea {
     border: thin solid var(--default-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -300,7 +302,9 @@ body {
     transition: all 0.1s;
 }
 
-.field input:focus {
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
     border-color: var(--default-4);
     box-shadow: 0 0 0 0.2rem var(--default-1);
     outline: 0;
@@ -311,6 +315,7 @@ body {
     color: var(--default-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
@@ -333,7 +338,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field--error input {
+.field--error input,
+.field--error select,
+.field--error textarea {
     border: thin solid var(--error-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -344,7 +351,9 @@ body {
     transition: all 0.1s;
 }
 
-.field--error input:focus {
+.field--error input:focus,
+.field--error select:focus,
+.field--error textarea:focus {
     border-color: var(--error-4);
     box-shadow: 0 0 0 0.2rem var(--error-1);
     outline: 0;
@@ -355,6 +364,7 @@ body {
     color: var(--error-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
@@ -377,7 +387,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field--info input {
+.field--info input,
+.field--info select,
+.field--info textarea {
     border: thin solid var(--info-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -388,7 +400,9 @@ body {
     transition: all 0.1s;
 }
 
-.field--info input:focus {
+.field--info input:focus,
+.field--info select:focus,
+.field--info textarea:focus {
     border-color: var(--info-4);
     box-shadow: 0 0 0 0.2rem var(--info-1);
     outline: 0;
@@ -399,6 +413,7 @@ body {
     color: var(--info-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
@@ -421,7 +436,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field--negative input {
+.field--negative input,
+.field--negative select,
+.field--negative textarea {
     border: thin solid var(--negative-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -432,7 +449,9 @@ body {
     transition: all 0.1s;
 }
 
-.field--negative input:focus {
+.field--negative input:focus,
+.field--negative select:focus,
+.field--negative textarea:focus {
     border-color: var(--negative-4);
     box-shadow: 0 0 0 0.2rem var(--negative-1);
     outline: 0;
@@ -443,6 +462,7 @@ body {
     color: var(--negative-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
@@ -465,7 +485,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field--positive input {
+.field--positive input,
+.field--positive select,
+.field--positive textarea {
     border: thin solid var(--positive-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -476,7 +498,9 @@ body {
     transition: all 0.1s;
 }
 
-.field--positive input:focus {
+.field--positive input:focus,
+.field--positive select:focus,
+.field--positive textarea:focus {
     border-color: var(--positive-4);
     box-shadow: 0 0 0 0.2rem var(--positive-1);
     outline: 0;
@@ -487,6 +511,7 @@ body {
     color: var(--positive-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
@@ -509,7 +534,9 @@ body {
     padding-left: 0.8rem;
 }
 
-.field--warn input {
+.field--warn input,
+.field--warn select,
+.field--warn textarea {
     border: thin solid var(--warn-3);
     border-radius: 0.2rem;
     display: inline-block;
@@ -520,7 +547,9 @@ body {
     transition: all 0.1s;
 }
 
-.field--warn input:focus {
+.field--warn input:focus,
+.field--warn select:focus,
+.field--warn textarea:focus {
     border-color: var(--warn-4);
     box-shadow: 0 0 0 0.2rem var(--warn-1);
     outline: 0;
@@ -531,6 +560,7 @@ body {
     color: var(--warn-3);
     cursor: text;
     padding: 0.4rem 0.8rem;
+    pointer-events: none;
     position: absolute;
     transition: all 0.1s;
 }
