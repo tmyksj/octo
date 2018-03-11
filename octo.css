@@ -31,7 +31,7 @@ body {
 
 .alert {
     background: var(--default-1);
-    border: 0.05rem solid var(--default-4);
+    border: thin solid var(--default-4);
     border-radius: 0.2rem;
     color: var(--default-4);
     padding: 0.4rem 0.8rem;
@@ -39,7 +39,7 @@ body {
 
 .alert--error {
     background: var(--error-1);
-    border: 0.05rem solid var(--error-4);
+    border: thin solid var(--error-4);
     border-radius: 0.2rem;
     color: var(--error-4);
     padding: 0.4rem 0.8rem;
@@ -47,7 +47,7 @@ body {
 
 .alert--info {
     background: var(--info-1);
-    border: 0.05rem solid var(--info-4);
+    border: thin solid var(--info-4);
     border-radius: 0.2rem;
     color: var(--info-4);
     padding: 0.4rem 0.8rem;
@@ -55,7 +55,7 @@ body {
 
 .alert--negative {
     background: var(--negative-1);
-    border: 0.05rem solid var(--negative-4);
+    border: thin solid var(--negative-4);
     border-radius: 0.2rem;
     color: var(--negative-4);
     padding: 0.4rem 0.8rem;
@@ -63,7 +63,7 @@ body {
 
 .alert--positive {
     background: var(--positive-1);
-    border: 0.05rem solid var(--positive-4);
+    border: thin solid var(--positive-4);
     border-radius: 0.2rem;
     color: var(--positive-4);
     padding: 0.4rem 0.8rem;
@@ -71,7 +71,7 @@ body {
 
 .alert--warn {
     background: var(--warn-1);
-    border: 0.05rem solid var(--warn-4);
+    border: thin solid var(--warn-4);
     border-radius: 0.2rem;
     color: var(--warn-4);
     padding: 0.4rem 0.8rem;
@@ -79,7 +79,7 @@ body {
 
 .badge {
     background: var(--default-1);
-    border: 0.05rem solid var(--default-4);
+    border: thin solid var(--default-4);
     border-radius: 0.2rem;
     color: var(--default-4);
     display: inline-block;
@@ -88,7 +88,7 @@ body {
 
 .badge--error {
     background: var(--error-1);
-    border: 0.05rem solid var(--error-4);
+    border: thin solid var(--error-4);
     border-radius: 0.2rem;
     color: var(--error-4);
     display: inline-block;
@@ -97,7 +97,7 @@ body {
 
 .badge--info {
     background: var(--info-1);
-    border: 0.05rem solid var(--info-4);
+    border: thin solid var(--info-4);
     border-radius: 0.2rem;
     color: var(--info-4);
     display: inline-block;
@@ -106,7 +106,7 @@ body {
 
 .badge--negative {
     background: var(--negative-1);
-    border: 0.05rem solid var(--negative-4);
+    border: thin solid var(--negative-4);
     border-radius: 0.2rem;
     color: var(--negative-4);
     display: inline-block;
@@ -115,7 +115,7 @@ body {
 
 .badge--positive {
     background: var(--positive-1);
-    border: 0.05rem solid var(--positive-4);
+    border: thin solid var(--positive-4);
     border-radius: 0.2rem;
     color: var(--positive-4);
     display: inline-block;
@@ -124,7 +124,7 @@ body {
 
 .badge--warn {
     background: var(--warn-1);
-    border: 0.05rem solid var(--warn-4);
+    border: thin solid var(--warn-4);
     border-radius: 0.2rem;
     color: var(--warn-4);
     display: inline-block;
@@ -133,19 +133,20 @@ body {
 
 .button {
     background: var(--default-3);
-    border: 0;
+    border: thin solid var(--default-3);
     border-radius: 0.2rem;
     color: var(--default-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button:focus {
+    border-color: var(--default-4);
     box-shadow: 0 0 0 0.2rem var(--default-1);
     outline: 0;
 }
@@ -156,19 +157,20 @@ body {
 
 .button--error {
     background: var(--error-3);
-    border: 0;
+    border: thin solid var(--error-3);
     border-radius: 0.2rem;
     color: var(--error-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button--error:focus {
+    border-color: var(--error-4);
     box-shadow: 0 0 0 0.2rem var(--error-1);
     outline: 0;
 }
@@ -179,19 +181,20 @@ body {
 
 .button--info {
     background: var(--info-3);
-    border: 0;
+    border: thin solid var(--info-3);
     border-radius: 0.2rem;
     color: var(--info-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button--info:focus {
+    border-color: var(--info-4);
     box-shadow: 0 0 0 0.2rem var(--info-1);
     outline: 0;
 }
@@ -202,19 +205,20 @@ body {
 
 .button--negative {
     background: var(--negative-3);
-    border: 0;
+    border: thin solid var(--negative-3);
     border-radius: 0.2rem;
     color: var(--negative-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button--negative:focus {
+    border-color: var(--negative-4);
     box-shadow: 0 0 0 0.2rem var(--negative-1);
     outline: 0;
 }
@@ -225,19 +229,20 @@ body {
 
 .button--positive {
     background: var(--positive-3);
-    border: 0;
+    border: thin solid var(--positive-3);
     border-radius: 0.2rem;
     color: var(--positive-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button--positive:focus {
+    border-color: var(--positive-4);
     box-shadow: 0 0 0 0.2rem var(--positive-1);
     outline: 0;
 }
@@ -248,25 +253,236 @@ body {
 
 .button--warn {
     background: var(--warn-3);
-    border: 0;
+    border: thin solid var(--warn-3);
     border-radius: 0.2rem;
     color: var(--warn-1);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.4rem 1.6rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     transition: all 0.1s;
 }
 
 .button--warn:focus {
+    border-color: var(--warn-4);
     box-shadow: 0 0 0 0.2rem var(--warn-1);
     outline: 0;
 }
 
 .button--warn:hover {
     background: var(--warn-2);
+}
+
+.field {
+    display: flex;
+    position: relative;
+}
+
+.field input {
+    border: thin solid var(--default-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field input:focus {
+    border-color: var(--default-4);
+    box-shadow: 0 0 0 0.2rem var(--default-1);
+    outline: 0;
+}
+
+.field label {
+    border: thin solid transparent;
+    color: var(--default-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field[data-dirty] label {
+    opacity: 0;
+}
+
+.field--error {
+    display: flex;
+    position: relative;
+}
+
+.field--error input {
+    border: thin solid var(--error-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field--error input:focus {
+    border-color: var(--error-4);
+    box-shadow: 0 0 0 0.2rem var(--error-1);
+    outline: 0;
+}
+
+.field--error label {
+    border: thin solid transparent;
+    color: var(--error-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field--error[data-dirty] label {
+    opacity: 0;
+}
+
+.field--info {
+    display: flex;
+    position: relative;
+}
+
+.field--info input {
+    border: thin solid var(--info-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field--info input:focus {
+    border-color: var(--info-4);
+    box-shadow: 0 0 0 0.2rem var(--info-1);
+    outline: 0;
+}
+
+.field--info label {
+    border: thin solid transparent;
+    color: var(--info-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field--info[data-dirty] label {
+    opacity: 0;
+}
+
+.field--negative {
+    display: flex;
+    position: relative;
+}
+
+.field--negative input {
+    border: thin solid var(--negative-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field--negative input:focus {
+    border-color: var(--negative-4);
+    box-shadow: 0 0 0 0.2rem var(--negative-1);
+    outline: 0;
+}
+
+.field--negative label {
+    border: thin solid transparent;
+    color: var(--negative-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field--negative[data-dirty] label {
+    opacity: 0;
+}
+
+.field--positive {
+    display: flex;
+    position: relative;
+}
+
+.field--positive input {
+    border: thin solid var(--positive-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field--positive input:focus {
+    border-color: var(--positive-4);
+    box-shadow: 0 0 0 0.2rem var(--positive-1);
+    outline: 0;
+}
+
+.field--positive label {
+    border: thin solid transparent;
+    color: var(--positive-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field--positive[data-dirty] label {
+    opacity: 0;
+}
+
+.field--warn {
+    display: flex;
+    position: relative;
+}
+
+.field--warn input {
+    border: thin solid var(--warn-3);
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.1s;
+}
+
+.field--warn input:focus {
+    border-color: var(--warn-4);
+    box-shadow: 0 0 0 0.2rem var(--warn-1);
+    outline: 0;
+}
+
+.field--warn label {
+    border: thin solid transparent;
+    color: var(--warn-3);
+    cursor: text;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    transition: all 0.1s;
+}
+
+.field--warn[data-dirty] label {
+    opacity: 0;
 }
 
 ::-moz-focus-inner {
