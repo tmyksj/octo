@@ -277,7 +277,16 @@ body {
 
 .field {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field div {
+    border: thin solid transparent;
+    color: var(--default-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field input {
@@ -286,7 +295,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
@@ -312,7 +321,16 @@ body {
 
 .field--error {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field--error div {
+    border: thin solid transparent;
+    color: var(--error-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field--error input {
@@ -321,7 +339,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
@@ -347,7 +365,16 @@ body {
 
 .field--info {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field--info div {
+    border: thin solid transparent;
+    color: var(--info-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field--info input {
@@ -356,7 +383,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
@@ -382,7 +409,16 @@ body {
 
 .field--negative {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field--negative div {
+    border: thin solid transparent;
+    color: var(--negative-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field--negative input {
@@ -391,7 +427,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
@@ -417,7 +453,16 @@ body {
 
 .field--positive {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field--positive div {
+    border: thin solid transparent;
+    color: var(--positive-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field--positive input {
@@ -426,7 +471,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
@@ -452,7 +497,16 @@ body {
 
 .field--warn {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
+}
+
+.field--warn div {
+    border: thin solid transparent;
+    color: var(--warn-3);
+    flex-basis: 100%;
+    font-size: small;
+    padding-left: 0.8rem;
 }
 
 .field--warn input {
@@ -461,7 +515,7 @@ body {
     display: inline-block;
     font-family: inherit;
     font-size: inherit;
-    flex: 1;
+    flex-grow: 1;
     padding: 0.4rem 0.8rem;
     transition: all 0.1s;
 }
