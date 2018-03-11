@@ -6,6 +6,20 @@
     <link href="octo.css" rel="stylesheet">
     <script src="octo.js"></script>
     <style>
+        header {
+            background: var(--info-1);
+            border-bottom: medium solid var(--info-4);
+        }
+
+        footer {
+            background: var(--info-1);
+            border-top: medium solid var(--info-4);
+        }
+
+        .copylight {
+            text-align: right;
+        }
+
         [class^="alert"] + [class^="alert"],
         [class^="field"] + [class^="field"] {
             margin-top: 0.8rem;
@@ -14,144 +28,158 @@
 </head>
 <body>
 <header>
-    <h1>Octo <span class="badge">The css framework</span></h1>
+    <div class="container">
+        <h1>Octo <span class="badge">The css framework</span></h1>
+    </div>
 </header>
 <main>
-    <section id="alerts">
-        <h2>Alerts</h2>
-        <div class="alert">
-            This is default alert.
-        </div>
-        <div class="alert--error">
-            This is error alert.
-        </div>
-        <div class="alert--info">
-            This is info alert.
-        </div>
-        <div class="alert--negative">
-            This is negative alert.
-        </div>
-        <div class="alert--positive">
-            This is positive alert.
-        </div>
-        <div class="alert--warn">
-            This is warn alert.
-        </div>
-    </section>
-    <section id="badges">
-        <h2>Badges</h2>
-        <span class="badge">Default</span>
-        <span class="badge--error">Error</span>
-        <span class="badge--info">Info</span>
-        <span class="badge--negative">Negative</span>
-        <span class="badge--positive">Positive</span>
-        <span class="badge--warn">Warn</span>
-    </section>
-    <section id="buttons">
-        <h2>Buttons</h2>
-        <h3>Buttons</h3>
-        <button class="button">Default</button>
-        <button class="button--error">Error</button>
-        <button class="button--info">Info</button>
-        <button class="button--negative">Negative</button>
-        <button class="button--positive">Positive</button>
-        <button class="button--warn">Warn</button>
-        <h3>Links</h3>
-        <a class="button" href="#">Default</a>
-        <a class="button--error" href="#">Error</a>
-        <a class="button--info" href="#">Info</a>
-        <a class="button--negative" href="#">Negative</a>
-        <a class="button--positive" href="#">Positive</a>
-        <a class="button--warn" href="#">Warn</a>
-    </section>
-    <section id="forms">
-        <h2>Forms</h2>
-        <form>
-            <h3>Fields</h3>
-            <div class="field">
-                <label for="forms-field-001">Default</label>
-                <input id="forms-field-001" type="text"/>
+    <div class="container">
+        <section id="alerts">
+            <h2>Alerts</h2>
+            <div class="alert">
+                This is default alert.
             </div>
-            <div class="field--error">
-                <label for="forms-field-002">Error</label>
-                <input id="forms-field-002" type="text"/>
+            <div class="alert--error">
+                This is error alert.
             </div>
-            <div class="field--info">
-                <label for="forms-field-003">Info</label>
-                <input id="forms-field-003" type="text"/>
+            <div class="alert--info">
+                This is info alert.
             </div>
-            <div class="field--negative">
-                <label for="forms-field-004">Negative</label>
-                <input id="forms-field-004" type="text"/>
+            <div class="alert--negative">
+                This is negative alert.
             </div>
-            <div class="field--positive">
-                <label for="forms-field-005">Positive</label>
-                <input id="forms-field-005" type="text"/>
+            <div class="alert--positive">
+                This is positive alert.
             </div>
-            <div class="field--warn">
-                <label for="forms-field-006">Warn</label>
-                <input id="forms-field-006" type="text"/>
+            <div class="alert--warn">
+                This is warn alert.
             </div>
-            <h3>Fields with messages</h3>
-            <div class="field">
-                <label for="forms-field-011">Default</label>
-                <input id="forms-field-011" type="text"/>
-                <div>Messages for fields.</div>
+        </section>
+        <section id="badges">
+            <h2>Badges</h2>
+            <span class="badge">Default</span>
+            <span class="badge--error">Error</span>
+            <span class="badge--info">Info</span>
+            <span class="badge--negative">Negative</span>
+            <span class="badge--positive">Positive</span>
+            <span class="badge--warn">Warn</span>
+        </section>
+        <section id="buttons">
+            <h2>Buttons</h2>
+            <h3>Buttons</h3>
+            <button class="button">Default</button>
+            <button class="button--error">Error</button>
+            <button class="button--info">Info</button>
+            <button class="button--negative">Negative</button>
+            <button class="button--positive">Positive</button>
+            <button class="button--warn">Warn</button>
+            <h3>Links</h3>
+            <a class="button" href="#">Default</a>
+            <a class="button--error" href="#">Error</a>
+            <a class="button--info" href="#">Info</a>
+            <a class="button--negative" href="#">Negative</a>
+            <a class="button--positive" href="#">Positive</a>
+            <a class="button--warn" href="#">Warn</a>
+        </section>
+        <section id="containers">
+            <h2>Containers</h2>
+            <div class="container">
+                <div>Container 1</div>
+                <div>Container 2</div>
+                <div>Container 3</div>
             </div>
-            <div class="field--error">
-                <label for="forms-field-012">Error</label>
-                <input id="forms-field-012" type="text"/>
-                <div>Message for fields.</div>
-            </div>
-            <div class="field--info">
-                <label for="forms-field-013">Info</label>
-                <input id="forms-field-013" type="text"/>
-                <div>Messages for fields.</div>
-            </div>
-            <div class="field--negative">
-                <label for="forms-field-014">Negative</label>
-                <input id="forms-field-014" type="text"/>
-                <div>Messages for fields.</div>
-            </div>
-            <div class="field--positive">
-                <label for="forms-field-015">Positive</label>
-                <input id="forms-field-015" type="text"/>
-                <div>Messages for fields.</div>
-            </div>
-            <div class="field--warn">
-                <label for="forms-field-016">Warn</label>
-                <input id="forms-field-016" type="text"/>
-                <div>Messages for fields.</div>
-            </div>
-            <h3>Samples</h3>
-            <h4>Elements</h4>
-            <div class="field">
-                <label for="forms-field-100">input[type="text"]</label>
-                <input id="forms-field-100" type="text"/>
-            </div>
-            <div class="field">
-                <label for="forms-field-101">textarea</label>
-                <textarea id="forms-field-101"></textarea>
-            </div>
-            <div class="field">
-                <label for="forms-field-102">select</label>
-                <select id="forms-field-102">
-                    <option></option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                </select>
-            </div>
-            <h4>Errors (for Server Side Rendering)</h4>
-            <div class="field--error">
-                <label for="forms-field-103">Email</label>
-                <input id="forms-field-103" type="text" value="email"/>
-                <div>Incorrect email address.</div>
-            </div>
-        </form>
-    </section>
+        </section>
+        <section id="forms">
+            <h2>Forms</h2>
+            <form>
+                <h3>Fields</h3>
+                <div class="field">
+                    <label for="forms-field-001">Default</label>
+                    <input id="forms-field-001" type="text"/>
+                </div>
+                <div class="field--error">
+                    <label for="forms-field-002">Error</label>
+                    <input id="forms-field-002" type="text"/>
+                </div>
+                <div class="field--info">
+                    <label for="forms-field-003">Info</label>
+                    <input id="forms-field-003" type="text"/>
+                </div>
+                <div class="field--negative">
+                    <label for="forms-field-004">Negative</label>
+                    <input id="forms-field-004" type="text"/>
+                </div>
+                <div class="field--positive">
+                    <label for="forms-field-005">Positive</label>
+                    <input id="forms-field-005" type="text"/>
+                </div>
+                <div class="field--warn">
+                    <label for="forms-field-006">Warn</label>
+                    <input id="forms-field-006" type="text"/>
+                </div>
+                <h3>Fields with messages</h3>
+                <div class="field">
+                    <label for="forms-field-011">Default</label>
+                    <input id="forms-field-011" type="text"/>
+                    <div>Messages for fields.</div>
+                </div>
+                <div class="field--error">
+                    <label for="forms-field-012">Error</label>
+                    <input id="forms-field-012" type="text"/>
+                    <div>Message for fields.</div>
+                </div>
+                <div class="field--info">
+                    <label for="forms-field-013">Info</label>
+                    <input id="forms-field-013" type="text"/>
+                    <div>Messages for fields.</div>
+                </div>
+                <div class="field--negative">
+                    <label for="forms-field-014">Negative</label>
+                    <input id="forms-field-014" type="text"/>
+                    <div>Messages for fields.</div>
+                </div>
+                <div class="field--positive">
+                    <label for="forms-field-015">Positive</label>
+                    <input id="forms-field-015" type="text"/>
+                    <div>Messages for fields.</div>
+                </div>
+                <div class="field--warn">
+                    <label for="forms-field-016">Warn</label>
+                    <input id="forms-field-016" type="text"/>
+                    <div>Messages for fields.</div>
+                </div>
+                <h3>Samples</h3>
+                <h4>Elements</h4>
+                <div class="field">
+                    <label for="forms-field-100">input[type="text"]</label>
+                    <input id="forms-field-100" type="text"/>
+                </div>
+                <div class="field">
+                    <label for="forms-field-101">textarea</label>
+                    <textarea id="forms-field-101"></textarea>
+                </div>
+                <div class="field">
+                    <label for="forms-field-102">select</label>
+                    <select id="forms-field-102">
+                        <option></option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+                <h4>Errors (for Server Side Rendering)</h4>
+                <div class="field--error">
+                    <label for="forms-field-103">Email</label>
+                    <input id="forms-field-103" type="text" value="email"/>
+                    <div>Incorrect email address.</div>
+                </div>
+            </form>
+        </section>
+    </div>
 </main>
 <footer>
-    <span>Octo.</span>
+    <div class="container">
+        <span class="copylight">Octo.</span>
+    </div>
 </footer>
 </body>
 </html>
