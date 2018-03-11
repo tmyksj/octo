@@ -5,11 +5,11 @@
         constructor() {
             this.initializers = [];
 
-            window.addEventListener("DOMContentLoaded", function (event) {
+            window.addEventListener("DOMContentLoaded", (function (event) {
                 for (let initializer of this.initializers) {
                     initializer();
                 }
-            });
+            }).bind(this));
         }
 
         static is(className, element) {
