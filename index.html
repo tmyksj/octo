@@ -17,21 +17,12 @@
             border-top: medium solid var(--info-4);
         }
 
-        [class^="alert"] + [class^="alert"],
-        [class^="field"] + [class^="field"] {
-            margin-top: 0.8rem;
-        }
-
-        #forms > form {
+        #forms-sample-000 {
             background: var(--default-1);
             border-radius: 0.2rem;
             margin-left: 10%;
             padding: 5%;
             width: 70%;
-        }
-
-        #forms > form [class^="field"] {
-            margin: 0 0 0.4rem 0;
         }
     </style>
 </head>
@@ -180,7 +171,7 @@
                 <div>Incorrect email address.</div>
             </div>
             <h3>Samples</h3>
-            <form>
+            <form id="forms-sample-000">
                 <h4>Sign Up</h4>
                 <div class="field">
                     <label for="forms-field-900">Username</label>
@@ -198,7 +189,7 @@
                     <label for="forms-field-903">Password (Confirm)</label>
                     <input id="forms-field-903" type="password"/>
                 </div>
-                <div class="ui--right">
+                <div class="field ui--right">
                     <button class="button--positive" type="submit">Register</button>
                 </div>
             </form>

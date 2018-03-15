@@ -7,3 +7,8 @@ header {
     margin-bottom: 0.8rem;
     padding: 0.8rem 0 0.4rem;
 }
+
+[class^="alert"] + [class^="alert"],
+[class^="field"] + [class^="field"] {
+    margin-top: 0.4rem;
+}

@@ -584,15 +584,30 @@ body {
     opacity: 0;
 }
 
-.ui--left {
+.ui--left.container,
+.ui--left.field {
+    justify-content: flex-start;
+}
+
+.ui--left:not(.container):not(.field) {
     text-align: left;
 }
 
-.ui--center {
+.ui--center.container,
+.ui--center.field {
+    justify-content: center;
+}
+
+.ui--center:not(.container):not(.field) {
     text-align: center;
 }
 
-.ui--right {
+.ui--right.container,
+.ui--right.field {
+    justify-content: flex-end;
+}
+
+.ui--right:not(.container):not(.field) {
     text-align: right;
 }
 
