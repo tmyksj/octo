@@ -8,7 +8,6 @@ The css framework.
 ## Imports
 ```html
 <link href="//tmyksj.github.io/octo/octo.css" rel="stylesheet">
-<link href="//tmyksj.github.io/octo/octo-frame.css" rel="stylesheet">
 <script src="//tmyksj.github.io/octo/octo.js"></script>
 ```
 
