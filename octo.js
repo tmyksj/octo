@@ -66,6 +66,7 @@
 
     class OctoContextWhen {
         constructor(selectorArray) {
+            this.eventListenerObject_ = {};
             this.selectorArray_ = selectorArray;
         }
 
@@ -82,13 +83,20 @@
         event(eventArray) {
             return new OctoContextWhenDo((callback) => {
                 eventArray.forEach((value) => {
-                    document.addEventListener(value, (event) => {
-                        for (let t = event.target; t !== null; t = t.parentElement) {
-                            if (t.matches(this.selectorArray_.join())) {
-                                callback(t);
-                            }
-                        }
-                    });
+                    if (this.eventListenerObject_[value] === undefined) {
+                        this.eventListenerObject_[value] = [];
+                        document.addEventListener(value, (event) => {
+                            this.eventListenerObject_[value].forEach((listener) => {
+                                for (let t = event.target; t !== null; t = t.parentElement) {
+                                    if (t.matches(this.selectorArray_.join())) {
+                                        listener(t);
+                                    }
+                                }
+                            });
+                        });
+                    }
+
+                    this.eventListenerObject_[value].push(callback);
                 });
             });
         }
