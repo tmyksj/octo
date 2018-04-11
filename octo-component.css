@@ -212,33 +212,51 @@
     background: var(--default-1);
     border: thin solid var(--default-4);
     border-radius: 0.2rem;
-    display: none;
     left: 0;
     margin: 0 auto;
+    opacity: 0;
     padding: 0.8rem;
     position: fixed;
     right: 0;
     top: 1.6rem;
+    visibility: hidden;
+    transition: all 0.1s;
     z-index: 1;
 }
 
 .dialog--error {
+    background: var(--error-1);
+    border: thin solid var(--error-4);
+    color: var(--error-4);
 }
 
 .dialog--info {
+    background: var(--info-1);
+    border: thin solid var(--info-4);
+    color: var(--info-4);
 }
 
 .dialog--negative {
+    background: var(--negative-1);
+    border: thin solid var(--negative-4);
+    color: var(--negative-4);
 }
 
 .dialog--open {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .dialog--positive {
+    background: var(--positive-1);
+    border: thin solid var(--positive-4);
+    color: var(--positive-4);
 }
 
 .dialog--warn {
+    background: var(--warn-1);
+    border: thin solid var(--warn-4);
+    color: var(--warn-4);
 }
 
 .field {
