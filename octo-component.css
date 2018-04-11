@@ -208,6 +208,39 @@
     margin: 0 auto;
 }
 
+.dialog {
+    background: var(--default-1);
+    border: thin solid var(--default-4);
+    border-radius: 0.2rem;
+    display: none;
+    left: 0;
+    margin: 0 auto;
+    padding: 0.8rem;
+    position: fixed;
+    right: 0;
+    top: 1.6rem;
+    z-index: 1;
+}
+
+.dialog--error {
+}
+
+.dialog--info {
+}
+
+.dialog--negative {
+}
+
+.dialog--open {
+    display: block;
+}
+
+.dialog--positive {
+}
+
+.dialog--warn {
+}
+
 .field {
     display: flex;
     flex-wrap: wrap;

@@ -11,6 +11,11 @@
     max-width: calc(100% - 0.8rem);
 }
 
+.dialog {
+    max-width: 80%;
+    width: 40rem;
+}
+
 .field {
     margin: 0.2rem;
 }

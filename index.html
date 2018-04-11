@@ -137,12 +137,12 @@
             <div class="octo-component">
                 <div class="octo-component__code"></div>
                 <div class="octo-component__dest">
-                    <button class="button">Default</button>
-                    <button class="button button--error">Error</button>
-                    <button class="button button--info">Info</button>
-                    <button class="button button--negative">Negative</button>
-                    <button class="button button--positive">Positive</button>
-                    <button class="button button--warn">Warn</button>
+                    <button class="button" type="button">Default</button>
+                    <button class="button button--error" type="button">Error</button>
+                    <button class="button button--info" type="button">Info</button>
+                    <button class="button button--negative" type="button">Negative</button>
+                    <button class="button button--positive" type="button">Positive</button>
+                    <button class="button button--warn" type="button">Warn</button>
                 </div>
             </div>
         </section>
@@ -157,6 +157,24 @@
                         <div>Container 1</div>
                         <div>Container 2</div>
                         <div>Container 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dialogs">
+            <h2>Dialogs</h2>
+
+            <div class="octo-component">
+                <div class="octo-component__code"></div>
+                <div class="octo-component__dest">
+                    <button class="button" data-dialog="open" data-join="#dialogs-000" type="button">Open Dialog</button>
+                    <div class="dialog" id="dialogs-000">
+                        <h4>This is dialog content.</h4>
+                        <div class="ui ui--j-fe">
+                            <button class="button button--negative" data-dialog="close" type="button">Cancel</button>
+                            <button class="button button--positive" data-dialog="close" type="button">OK</button>
+                        </div>
                     </div>
                 </div>
             </div>
