@@ -2,18 +2,36 @@
     "use strict";
 
     class Octo {
-        static target(selectorArray) {
-            return new OctoBuilder(selectorArray);
+        static assert(actual) {
+            return new OctoAssert(actual);
+        }
+
+        static buildComponent(selectorArray, callback) {
+            callback(new OctoComponentContext(selectorArray));
         }
     }
 
-    class OctoBuilder {
-        constructor(selectorArray) {
-            this.context_ = new OctoContext(selectorArray);
+    class OctoAssert {
+        constructor(actual) {
+            this.actual_ = actual;
         }
 
-        build(callback) {
-            callback(this.context_);
+        isNotNull() {
+            if (this.actual_ === undefined || this.actual_ === null) {
+                throw new OctoAssertException("actual: {value} is null. expected: {value} is not null.");
+            }
+        }
+
+        isNull() {
+            if (this.actual_ !== undefined && this.actual_ !== null) {
+                throw new OctoAssertException("actual: {value} is not null. expected: {value} is null.");
+            }
+        }
+    }
+
+    class OctoAssertException {
+        constructor(message) {
+            this.message = message;
         }
     }
 
@@ -31,18 +49,16 @@
             return Array.from(this.root.querySelectorAll(selector))
                 .concat(Array.from(document.querySelectorAll("[data-join]")).filter((value, index, array) => {
                     return this.root.matches(value.dataset.join);
-                }));
+                })).filter((value, index, array) => {
+                    return (index === array.indexOf(value));
+                });
         }
     }
 
-    class OctoContext {
+    class OctoComponentContext {
         constructor(selectorArray) {
             this.data_ = {};
             this.selectorArray_ = selectorArray;
-        }
-
-        assert(actual) {
-            return new OctoContextAssert(actual);
         }
 
         data(key, value) {
@@ -54,43 +70,18 @@
         }
 
         when() {
-            return new OctoContextWhen(this.selectorArray_);
+            return new OctoComponentContextWhen(this.selectorArray_);
         }
     }
 
-    class OctoContextAssert {
-        constructor(actual) {
-            this.actual_ = actual;
-        }
-
-        isNotNull() {
-            if (this.actual_ === undefined || this.actual_ === null) {
-                throw new OctoContextAssertException("actual: {value} is null. expected: {value} is not null.");
-            }
-        }
-
-        isNull() {
-            if (this.actual_ !== undefined && this.actual_ !== null) {
-                throw new OctoContextAssertException("actual: {value} is not null. expected: {value} is null.");
-            }
-        }
-    }
-
-    class OctoContextAssertException {
-        constructor(message) {
-            this.message = message;
-        }
-    }
-
-    class OctoContextWhen {
+    class OctoComponentContextWhen {
         constructor(selectorArray) {
-            this.eventListenerObject_ = {};
             this.selectorArray_ = selectorArray;
         }
 
         domContentLoaded() {
-            return new OctoContextWhenDo((callback) => {
-                window.addEventListener("DOMContentLoaded", (event) => {
+            return new OctoComponentContextWhenDo((callback) => {
+                OctoEventManager.addEventListener("DOMContentLoaded", (event) => {
                     document.querySelectorAll(this.selectorArray_.join()).forEach((value) => {
                         callback(new OctoComponent(value), event);
                     });
@@ -99,39 +90,32 @@
         }
 
         event(eventArray) {
-            return new OctoContextWhenDo((callback) => {
+            return new OctoComponentContextWhenDo((callback) => {
                 eventArray.forEach((value) => {
-                    if (this.eventListenerObject_[value] === undefined) {
-                        this.eventListenerObject_[value] = [];
-                        document.addEventListener(value, (event) => {
-                            this.eventListenerObject_[value].forEach((listener) => {
-                                let propagation = (target) => {
-                                    if (target === null) {
-                                        return;
-                                    }
+                    OctoEventManager.addEventListener(value, (event) => {
+                        let propagation = (target) => {
+                            if (target === null) {
+                                return;
+                            }
 
-                                    if (target.dataset.join === undefined) {
-                                        if (target.matches(this.selectorArray_.join())) {
-                                            listener(new OctoComponent(target), event);
-                                        }
-                                        propagation(target.parentElement);
-                                    } else {
-                                        document.querySelectorAll(target.dataset.join).forEach(propagation);
-                                    }
-                                };
+                            if (target.dataset.join === undefined) {
+                                if (target.matches(this.selectorArray_.join())) {
+                                    callback(new OctoComponent(target), event);
+                                }
+                                propagation(target.parentElement);
+                            } else {
+                                document.querySelectorAll(target.dataset.join).forEach(propagation);
+                            }
+                        };
 
-                                propagation(event.target);
-                            });
-                        });
-                    }
-
-                    this.eventListenerObject_[value].push(callback);
+                        propagation(event.target);
+                    });
                 });
             });
         }
     }
 
-    class OctoContextWhenDo {
+    class OctoComponentContextWhenDo {
         constructor(whenDoWrapper) {
             this.whenDoWrapper_ = whenDoWrapper;
         }
@@ -141,26 +125,50 @@
         }
     }
 
-    Octo.target([".dialog"]).build((context) => {
+    class OctoEventManager {
+        constructor() {
+            this.eventListenerObject_ = {};
+        }
+
+        static addEventListener(type, listener) {
+            if (this.instance_ === undefined) {
+                this.instance_ = new OctoEventManager();
+            }
+
+            this.instance_.addEventListener_(type, listener);
+        }
+
+        addEventListener_(type, listener) {
+            if (this.eventListenerObject_[type] === undefined) {
+                this.eventListenerObject_[type] = [];
+                (type === "DOMContentLoaded" ? window : document).addEventListener(type, (event) => {
+                    this.eventListenerObject_[type].forEach((l) => { l(event); });
+                });
+            }
+
+            this.eventListenerObject_[type].push(listener);
+        }
+    }
+
+    Octo.buildComponent([".dialog"], (context) => {
         context.when().event(["click"]).do((component, event) => {
             let dialog = event.target.dataset.dialog;
-            context.assert(dialog).isNotNull();
 
             if (dialog === "open") {
                 component.root.classList.add("dialog--open");
-            } else {
+            } else if (dialog === "close") {
                 component.root.classList.remove("dialog--open");
             }
         });
     });
 
-    Octo.target([".field"]).build((context) => {
+    Octo.buildComponent([".field"], (context) => {
         context.data("update", (component, event) => {
             let control = component.querySelector(".field__control");
             let label = component.querySelector(".field__label");
 
-            context.assert(control).isNotNull();
-            context.assert(label).isNotNull();
+            Octo.assert(control).isNotNull();
+            Octo.assert(label).isNotNull();
 
             if (control.value === "") {
                 label.classList.remove("field__label--dirty")
